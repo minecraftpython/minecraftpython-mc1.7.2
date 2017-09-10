@@ -119,10 +119,5 @@ public class SpellInterpreter {
 			}
 		}
 	}
-
-	public void overridePositionVariablesInPython(MagicWand magicWand) {
-		synchronized (interpreter) {
-			//TODO add code here that allows NPCs to use myX(), myY(), and myZ() like players can	
-		}
-	}
+	
 }

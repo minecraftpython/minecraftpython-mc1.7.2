@@ -14,7 +14,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class ScriptLoaderConstants {
 
-	private static String RESOURCES_PATH;
+	public static String RESOURCES_PATH;
 	public static final String PYTHON_SCRIPT_EXTENSION = ".py";
 	public static String SCRIPTS_PATH;
 	public static String MINECRAFT_PROGRAMMING_PATH;
@@ -35,15 +35,16 @@ public class ScriptLoaderConstants {
 		if(new File(event.getModConfigurationDirectory().getAbsolutePath()).exists()){
 			RESOURCES_PATH = event.getModConfigurationDirectory().getAbsolutePath();
 			SCRIPTS_PATH = RESOURCES_PATH + File.separatorChar + "scripts";
-			if(!new File(SCRIPTS_PATH).exists()){
-				//emplace resources if they aren't there
-				JavaFileIOHelper.SINGLETON.copyResourcePathContentsToFile("scripts"+ File.separator+"base", new File(SCRIPTS_PATH+File.separator+"admin.py"));
-			}
 			MINECRAFT_PROGRAMMING_PATH = SCRIPTS_PATH
 					+ File.separatorChar+"mp";
 			TECHMAGE_SCRIPTS_PATH = SCRIPTS_PATH
 					+ File.separatorChar+"techmage";
 			WAND_TEXTURE_LOCATION = RESOURCES_PATH + File.separatorChar+"assets"+File.separatorChar+"techmage"+File.separatorChar+"textures"+File.separatorChar+"items"+File.separatorChar;
+			
+			//emplace default Python script resources if they aren't there
+			if(!new File(SCRIPTS_PATH).exists()){
+				JavaFileIOHelper.SINGLETON.emplaceDefaultResources();
+			}
 			return true;
 		}
 		else{

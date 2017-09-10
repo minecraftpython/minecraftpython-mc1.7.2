@@ -86,7 +86,6 @@ public class MagicWand extends Item implements IArcane {
 
 	public void castSpellFromWand(EntityLivingBase magicCaster, World world) {
 		if (this.wandType.equals(WandType.LOCAL) && world.isRemote) {
-			this.spellInterpreter.overridePositionVariablesInPython(this);
 			castStoredSpell();
 		} else if (this.wandType.equals(WandType.PROJECTILE)) {
 			world.spawnEntityInWorld(new EntityWandProjectile(world,

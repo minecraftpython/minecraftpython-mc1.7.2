@@ -26,6 +26,7 @@ import org.sapphon.minecraft.modding.base.ClientProxy;
 import org.sapphon.minecraft.modding.base.CombinedClientProxy;
 import org.sapphon.minecraft.modding.base.CommonProxy;
 import org.sapphon.minecraft.modding.base.DedicatedServerProxy;
+import org.sapphon.minecraft.modding.base.JavaFileIOHelper;
 import org.sapphon.minecraft.modding.base.ModConfigurationFlags;
 import org.sapphon.minecraft.modding.minecraftpython.command.CommandQueueServerSide;
 import org.sapphon.minecraft.modding.minecraftpython.command.PacketHandlerServerSideCommand;

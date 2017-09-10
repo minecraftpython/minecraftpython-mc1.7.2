@@ -1,6 +1,0 @@
-ada='algorithm'
-hopper='53'
-jepsen='XO'
-hedy='Navy'
-kare='Happy Mac'
-radia='Internet'
